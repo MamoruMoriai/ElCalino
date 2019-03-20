@@ -1,0 +1,33 @@
+<h1>SALES</h1>
+
+<% if @today.present? %>
+  <table>
+    <tr>
+      <th>日付</th>
+      <th>テーブル番号</th>
+      <th>合計金額</th>
+    </tr>
+  <% @today.each do |today| %>
+    <tr>
+      <td><%= today.date %></td>
+      <td><%= today.name %></td>
+      <td><%= today.sum_price %></td>
+    </tr>
+  <% end %>
+  </table>
+<% else %>
+<p>NO</p>
+<% end %>
+
+<div>
+  <h3>伝票別売上</h3>
+  <canvas id="sale_price" width="300" height="300"></canvas>
+</div>
+<div>
+  <h3>日別売上</h3>
+  <canvas id="date_price" width="300" height="300"></canvas>
+</div>
+<div>
+  <h3>テーブル別売上</h3>
+  <canvas id="table_price" width="300" height="300"></canvas>
+</div>

@@ -1,0 +1,26 @@
+<table>
+  <tr>
+    <th><%= form.label :category_id, "カテゴリーID" %></th>
+    <td><%= form.collection_select :category_id,
+            Category.where(id: 8..14), :id, :name %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :genre_id, "ジャンルID" %></th>
+    <td><%= form.collection_select :genre_id,
+            Genre.where(id: 7..19), :id, :name %>
+    </td>
+  </tr>
+  <tr>
+    <th><%= form.label :name, "飲料名" %></th>
+    <td><%= form.text_field :name %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :price, "値段" %></th>
+    <td><%= form.number_field :price %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :image, "画像" %></th>
+    <td><%= form.file_field :image %></th>
+  </tr>
+</table>

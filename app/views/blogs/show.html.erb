@@ -1,0 +1,18 @@
+<h1>Show</h1>
+
+<p><%= link_to "TOP", :root %></p>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @blog.title %></td>
+  </tr>
+  <tr>
+    <th>コンテンツ</th>
+    <td><%= @blog.content %></td>
+  </tr>
+  <tr>
+    <th>配信日</th>
+    <td><%= @blog.time %></td>
+  </tr>
+</table>

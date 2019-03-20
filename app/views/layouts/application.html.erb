@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Elcarino</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= Gon::Base.render_data %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="header">
+        <%= render "shared/header" %>
+      </div>
+      <div id="content">
+        <% if flash.notice %>
+        <p class="notice"><%= flash.notice %></p>
+        <% end %>
+
+        <%= yield %>
+      </div>
+      <% if !chief %>
+      <div id="sidebar">
+        <%= render "shared/sidebar" %>
+      </div>
+      <div id="footer">
+        <%= render "shared/footer" %>
+      </div>
+      <% end %>
+    </div>
+  </body>
+</html>

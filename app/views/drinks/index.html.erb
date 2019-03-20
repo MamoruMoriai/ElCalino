@@ -1,0 +1,29 @@
+<h1>DRINK</h1>
+  
+<p>
+  <%= link_to "Blog", :root %> | 
+  <%= link_to "Food", :foods %>
+</p>
+<p><%= link_to "メニューの追加", :new_drink %></p>
+
+<% if @drinks.present? %>
+<table class="list">
+  <tr>
+    <th>飲料名</th>
+    <th>値段</th>
+  </tr>
+  <% @drinks.each do |drink| %>
+  <tr>
+    <td><%= link_to drink.name, drink %></td>
+    <td><%= drink.price %></td>
+    <td>
+      <%= link_to "編集", [:edit, drink] %> |
+      <%= link_to "削除", drink, method: :delete,
+            data: { confirm: "本当に削除しますか？" } %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p>メニュー情報がありません。</p>
+<% end %>

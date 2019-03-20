@@ -1,0 +1,30 @@
+<h1>BLOG</h1>
+
+<p><%= link_to "Food", :foods %></p>
+
+<h2><%= link_to "新規投稿", :new_blog %></h2>
+
+<% if @blogs.present? %>
+<table class="list">
+  <tr>
+    <th>タイトル</th>
+    <th>コンテンツ</th>
+    <th>配信日</th>
+  </tr>
+  <% @blogs.each do |blog| %>
+  <tr>
+    <td><%= link_to blog.title, blog %></td>
+    <td><%= blog.content %></td>
+    <td><%= blog.time %></td>
+    <td>
+      <%= link_to "編集", [:edit, blog] %> | 
+      <%= link_to "削除", blog, method: :delete,
+            data: { confirm: "本当に削除しますか？" } %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% else %>
+<p>配信情報がありません。</p>
+<% end %>
+

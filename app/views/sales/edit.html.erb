@@ -1,0 +1,9 @@
+<h1>売上データの編集</h1>
+  
+<p><%= link_to "SALES", :sales%></p>
+
+<%= form_for @sale do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>
+~                      

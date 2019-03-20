@@ -1,0 +1,78 @@
+<ul id="SnsIcon">
+  <li>
+    <%= link_to "https://www.instagram.com/el_carino_1992/" do %>
+      <%= image_tag "instagram.svg" %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "https://www.facebook.com/エルカリーニョ-499767786724533/" do %>
+      <%= image_tag "facebook.svg" %>
+    <% end %>
+  </li>
+</ul>
+
+
+<% if !chief %>
+  <div class="humburger">
+    <div class="toggle">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="hum_nav">
+      <ul>
+        <li><%= link_to "TOP", :root %></li>
+        <li><%= link_to "MENU", "#menu_img" %></li>
+        <li><%= link_to "ACCESS", "#maps_img" %></li>
+        <li><%= link_to "PARKING", "#parking" %></li>
+        <li><%= link_to "INFORMATION", "#info_img" %></li>
+      </ul>
+    </nav>
+  </div>
+<% end %>
+
+<% if chief %>
+  <div class="humburger">
+    <div class="toggle">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <nav class="hum_nav">
+      <ul>
+        <li><%= link_to "LOGOUT", :logout, method: :delete,
+                data: { confirm: "ログアウトしますか？" } %></li>
+        <li><%= link_to "FOOD", :foods %></li>
+        <li><%= link_to "DRINK", :drinks %></li>
+        <li><%= link_to "BLOG", :blogs %></li>
+        <li><%= link_to "SALES", :sales %></li>
+      </ul>
+    </nav>
+  </div>
+<% end %>
+
+<div id="elcarino">
+  <%= image_tag 'top.svg' %>
+</div>
+
+<ul id="icon">
+  <li id="menu_icon">
+    <%= link_to "#menu_img" do %>
+      <%= image_tag "menu_icon.png", :size => "100x100" %>
+    <% end %>
+  </li>
+  <li id="maps_icon">
+    <%= link_to "#maps_img" do %>
+      <%= image_tag "maps_icon.png", :size => "100x100" %>
+    <% end %>
+  </li>
+  <li id="info_icon">
+    <%= link_to "#info_img" do %>
+      <%= image_tag "info_icon.png", :size => "100x100" %>
+    <% end %>
+  </li>
+</ul>

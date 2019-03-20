@@ -1,0 +1,8 @@
+<h1>フードメニュー情報の編集</h1>
+
+<p><%= link_to "FOODS", :foods%></p>
+
+<%= form_for @food do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

@@ -1,0 +1,20 @@
+<h1>メニュー詳細</h1>
+  
+<p><%= link_to "TOP", :drinks %></p>
+
+<table>
+  <tr>
+    <th>飲料名</th>
+    <td><%= @drink.name %></td>
+  </tr>
+  <tr>
+    <th>値段</th>
+    <td><%= @drink.price %></td>
+  </tr>
+  <% if @drink.image? %>
+  <tr>
+    <th>画像</th>
+    <td><%= image_tag @drink.image.url %></td>
+  </tr>
+  <% end %>
+</table>

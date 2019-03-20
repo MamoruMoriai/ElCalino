@@ -1,0 +1,20 @@
+<h1>メニュー詳細</h1>
+
+<p><%= link_to "FOODS", :foods %></p>
+
+<table>
+  <tr>
+    <th>料理名</th>
+    <td><%= @food.name %></td>
+  </tr>
+  <tr>
+    <th>値段</th>
+    <td><%= @food.price %></td>
+  </tr>
+  <% if @food.image? %>
+  <tr>
+    <th>画像</th>
+    <td><%= image_tag @food.image.url %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,8 @@
+<h1>投稿</h1>
+
+<p><%= link_to "TOP", :root %></p>
+
+<%= form_for @blog do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit "投稿" %></p>
+<% end %>

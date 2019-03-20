@@ -1,0 +1,8 @@
+<h1>投稿の編集</h1>
+
+<p><%= link_to "TOP", @blog %></p>
+
+<%= form_for @blog do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit "完了" %></p>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>ドリンクメニューの追加</h1>
+  
+<p><%= link_to "TOP", :drinks %></p>
+
+<%= form_for @drink do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>

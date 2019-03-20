@@ -1,0 +1,19 @@
+<h2>BLOG</h2>
+<div id="blog">
+  <% if @blogs.present? %>
+    <table id="blogs">
+      <% @blogs.each do |blog| %>
+      <tr>
+        <td id="blog_title"><%= blog.title %></td>
+        <td>\</td>
+        <td id="blog_content"><%= blog.content %></td>
+        <td>\</td>
+        <td id="blog_time"><%= blog.time %></td>
+      </tr>
+      <% end %>
+    </table>
+    <%= will_paginate @blogs %>
+  <% else %>
+    <p>blog is nothig.</p>
+  <% end %>
+</div>
