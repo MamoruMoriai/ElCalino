@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :foods
   resources :drinks
   resources :blogs
-  resources :sales
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
