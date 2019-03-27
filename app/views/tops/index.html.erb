@@ -5,7 +5,7 @@
   <% if @categories.present? %>
     <% @categories.each do |category| %>
       <ul class="category_list" data-id=<%=category.id%>>
-        <li id="category_list"><%= category.name %><li>
+        <li id="category_list" data-id=<%=category.id%>><%= category.name %><li>
       </ul>
           <% @genres.each do |genre| %>
             <% if genre.category_id == category.id %>
@@ -59,7 +59,6 @@
             <% else %>
               <p>Drink menu is nothing.</p>
             <% end %>
-
           </ul>
         <% end %>
       </ul>

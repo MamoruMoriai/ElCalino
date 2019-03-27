@@ -21,14 +21,12 @@
 
         <%= yield %>
       </div>
-      <% if !chief %>
       <div id="sidebar">
         <%= render "shared/sidebar" %>
       </div>
       <div id="footer">
         <%= render "shared/footer" %>
       </div>
-      <% end %>
     </div>
   </body>
 </html>

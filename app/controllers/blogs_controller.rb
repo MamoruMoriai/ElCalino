@@ -9,6 +9,8 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @blogs = Blog.order("id": "DESC")
+             .paginate(page: params[:page], per_page: 15)
     @blog = Blog.new(time: Date.today)
   end
 

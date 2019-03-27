@@ -129,7 +129,8 @@ table#info {              /* インフォメーションテーブル */
 }
 
 div#blog {                /* ブログ背景 */
-  background: linear-gradient(0.3turn,#000000 20%,#34B48B 50%,#E94649 50%,#000000 80%);                   /* 背景色 */
+  background: linear-gradient(0.3turn,#000000 20%,#E94649 50%,#34B48B 50%,#000000 80%);                   /* 背景色 */
+  align: center;
 }
 table#blogs {
   text-align: center;

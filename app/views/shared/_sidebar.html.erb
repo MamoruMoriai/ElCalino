@@ -1,12 +1,15 @@
+<div align="center">
+
 <h2>BLOG</h2>
 <div id="blog">
+  <% if chief %>
+    <p><%= link_to "新規投稿", :new_blog %></p>
+  <% end %>
   <% if @blogs.present? %>
     <table id="blogs">
       <% @blogs.each do |blog| %>
       <tr>
-        <td id="blog_title"><%= blog.title %></td>
-        <td>\</td>
-        <td id="blog_content"><%= blog.content %></td>
+        <td id="blog_title"><%= link_to blog.title, blog %></td>
         <td>\</td>
         <td id="blog_time"><%= blog.time %></td>
       </tr>
@@ -16,4 +19,6 @@
   <% else %>
     <p>blog is nothig.</p>
   <% end %>
+</div>
+
 </div>
