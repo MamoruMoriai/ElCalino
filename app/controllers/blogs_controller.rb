@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(params[:blog])
+    @blog = Blog.new(blog_params)
     if @blog.save
       redirect_to @blog, notice: "投稿しました。"
     else
@@ -29,7 +29,7 @@ class BlogsController < ApplicationController
 
   def update
     @blog = Blog.find(params[:id])
-    @blog.assign_attributes(params[:blog])
+    @blog.assign_attributes(blog_params)
     if @blog.save
       redirect_to @blog, notice: "投稿を更新しました。"
     else
@@ -41,5 +41,10 @@ class BlogsController < ApplicationController
     @blog = Blog.find(params[:id])
     @blog.destroy
     redirect_to :blogs, notice: "投稿を削除しました。"
+  end
+
+  private
+  def blog_params
+    params.require(:blog).permit(:title, :content, :time)
   end
 end

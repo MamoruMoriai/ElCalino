@@ -2,15 +2,15 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   
-  class Forbidden < StandardError; end
-  class NotFound < StandardError; end
+#  class Forbidden < StandardError; end
+#  class NotFound < StandardError; end
 
-  rescue_from Exception, with: :rescue_500
-  rescue_from ActionController::RoutingError, with: :rescue_404
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_404
-  rescue_from ActionController::ParameterMissing, with: :rescue_400
-  rescue_from Forbidden, with: :rescue_403
-  rescue_from NotFound, with: :rescue_404
+#  rescue_from Exception, with: :rescue_500
+#  rescue_from ActionController::RoutingError, with: :rescue_404
+#  rescue_from ActiveRecord::RecordNotFound, with: :rescue_404
+#  rescue_from ActionController::ParameterMissing, with: :rescue_400
+#  rescue_from Forbidden, with: :rescue_403
+#  rescue_from NotFound, with: :rescue_404
 
 
   private

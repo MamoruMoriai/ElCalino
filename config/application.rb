@@ -19,6 +19,6 @@ module Elcarino
     config.active_record.default_timezone = :local  #登録時刻データ
     config.time_zone = 'Tokyo'  #表示時刻
 
-    config.action_controller.permit_all_parameters = true  #ストロングパラメータ無効化
+    config.action_controller.permit_all_parameters = false  #ストロングパラメータ有効化
   end
 end

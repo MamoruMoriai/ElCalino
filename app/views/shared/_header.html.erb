@@ -23,11 +23,11 @@
     </div>
     <nav class="hum_nav">
       <ul>
-        <li><%= link_to "TOP", :root %></li>
-        <li><%= link_to "MENU", "#menu_img" %></li>
-        <li><%= link_to "ACCESS", "#maps_img" %></li>
-        <li><%= link_to "PARKING", "#parking" %></li>
-        <li><%= link_to "INFORMATION", "#info_img" %></li>
+        <li><%= link_to_unless_current "TOP", :root %></li>
+        <li><%= link_to_unless_current "MENU", "#menu_img" %></li>
+        <li><%= link_to_unless_current "ACCESS", "#maps_img" %></li>
+        <li><%= link_to_unless_current "PARKING", "#parking" %></li>
+        <li><%= link_to_unless_current "INFORMATION", "#info_img" %></li>
       </ul>
     </nav>
   </div>
@@ -46,15 +46,16 @@
       <ul>
         <li><%= link_to "LOGOUT", :logout, method: :delete,
                 data: { confirm: "ログアウトしますか？" } %></li>
-        <li><%= link_to "TOP", :root %></li>
-        <li><%= link_to "FOOD", :foods %></li>
-        <li><%= link_to "DRINK", :drinks %></li>
-        <li><%= link_to "BLOG", :blogs %></li>
+        <li><%= link_to_unless_current "TOP", :root %></li>
+        <li><%= link_to_unless_current "FOOD", :foods %></li>
+        <li><%= link_to_unless_current "DRINK", :drinks %></li>
+        <li><%= link_to_unless_current "BLOG", :blogs %></li>
       </ul>
     </nav>
   </div>
 <% end %>
 
+<% if controller.controller_name == 'tops' %> 
 <div id="elcarino">
   <%= image_tag 'top.svg' %>
 </div>
@@ -76,3 +77,4 @@
     <% end %>
   </li>
 </ul>
+<% end %>

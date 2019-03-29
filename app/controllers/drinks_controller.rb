@@ -16,7 +16,7 @@ class DrinksController < ApplicationController
   end
 
   def create
-    @drink = Drink.new(params[:drink])
+    @drink = Drink.new(drink_params)
     if @drink.save
       redirect_to @drink, notice: "追加しました。"
     else
@@ -26,7 +26,7 @@ class DrinksController < ApplicationController
 
   def update
     @drink = Drink.find(params[:id])
-    @drink.assign_attributes(params[:drink])
+    @drink.assign_attributes(drink_params)
     if @drink.save
       redirect_to @drink, notice: "情報を更新しました。"
     else
@@ -38,5 +38,10 @@ class DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
     @drink.destroy
     redirect_to :drinks, notice: "情報を削除しました。"
+  end
+
+  private
+  def drink_params
+    params.require(:drink).permit(:category_id, :name, :price, :image)
   end
 end

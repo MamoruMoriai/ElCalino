@@ -1,10 +1,9 @@
+<% if controller.controller_name == 'tops' %>
+
 <div align="center">
 
 <h2>BLOG</h2>
 <div id="blog">
-  <% if chief %>
-    <p><%= link_to "新規投稿", :new_blog %></p>
-  <% end %>
   <% if @blogs.present? %>
     <table id="blogs">
       <% @blogs.each do |blog| %>
@@ -22,3 +21,5 @@
 </div>
 
 </div>
+
+<% end %>

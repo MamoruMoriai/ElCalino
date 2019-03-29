@@ -18,7 +18,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(params[:food])
+    @food = Food.new(food_params)
     if @food.save
       redirect_to @food, notice: "追加しました。"
     else
@@ -28,7 +28,7 @@ class FoodsController < ApplicationController
 
   def update
     @food = Food.find(params[:id])
-    @food.assign_attributes(params[:food])
+    @food.assign_attributes(food_params)
     if @food.save
       redirect_to @food, notice: "情報を更新しました。"
     else
@@ -40,5 +40,10 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @food.destroy
     redirect_to :foods, notice: "情報を削除しました。"
+  end
+
+  private
+  def food_params
+    params.require(:food).permit(:category_id, :name, :price, :image)
   end
 end
