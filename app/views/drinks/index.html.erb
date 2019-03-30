@@ -1,10 +1,6 @@
-<h1>DRINK</h1>
+<h1>DRINKメニュー一覧</h1>
   
-<p>
-  <%= link_to "Blog", :root %> | 
-  <%= link_to "Food", :foods %>
-</p>
-<p><%= link_to "メニューの追加", :new_drink %></p>
+<h3 id="menu"><%= link_to "メニューの追加", :new_drink %></h3>
 
 <% if @drinks.present? %>
 <table class="list">
@@ -15,7 +11,7 @@
   <% @drinks.each do |drink| %>
   <tr>
     <td><%= link_to drink.name, drink %></td>
-    <td><%= drink.price %></td>
+    <td>¥<%= drink.price %></td>
     <td>
       <%= link_to "編集", [:edit, drink] %> |
       <%= link_to "削除", drink, method: :delete,

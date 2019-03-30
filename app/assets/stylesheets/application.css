@@ -49,7 +49,7 @@ ul#SnsIcon li {           /* SNSアイコン */
   width: 80px;            /* アイコンサイズ */
 }
 .humburger li {
-  text-align: right;
+  text-align: left;
   list-style: none;
   font-size: 20px;
 }
@@ -97,7 +97,6 @@ td.menu_list {
   padding-left: 50px;
   padding-right: 50px;
 }
-
 div#maps_img {            /* マップイメージ */
   margin-top: 30px;       /* 上部余白 */
   width: 300px;           /* 画像サイズ */
@@ -127,23 +126,32 @@ table#info {              /* インフォメーションテーブル */
   width: 60%;             /* テーブル幅 */
   margin: 0 auto;         /* 中央寄せ */
 }
-
-div#blog {                /* ブログ背景 */
-  background: linear-gradient(0.3turn,#000000 20%,#E94649 50%,#34B48B 50%,#000000 80%);                   /* 背景色 */
-  align: center;
+h1#menu {
+  color: #66EEBB;
+}
+h1#news {
+  color: #66EEBB;
+}
+div#blog_position {
+  margin-top: 100px;
 }
 table#blogs {
-  text-align: center;
   margin: 0 auto;
 }
+div#blog {                /* ブログ背景 */
+  background: linear-gradient(0.3turn,#000000 0%,#E94649 30%,#34B48B 60%,#000000 100%);                   /* 背景色 */
+}
 td#blog_title {
-  font-size: 15px;
+  font-size: 18px;
 }
 td#blog_content {
-  font-size: 15px;
+  font-size: 18px;
 }
 td#blog_time {
-  font-size: 10px;
+  font-size: 12px;
+}
+.blog_form {
+  margin: 0 auto;
 }
 
 div#header {
@@ -157,20 +165,8 @@ div#elcarino {            /* エルカリネオン */
 
 div#content {             /* メインコンテンツ */
   width: 50%;             /* コンテンツ幅 */
+  margin: 0 auto;         /* 中央揃え */
   text-align: center;     /* 中央揃え */
-  float: left;
-}
-
-div#sidebar {              /* サイドバー */
-  width: 45%;             /* 幅 */
-  float: left;
-  text-align: center;
-  margin-top: 300px;
-}
-
-div#blog {           /* サイドバー */
-  text-align: right;
-  font-size: 15px;
 }
 
 div#footer {                     /* フッター */
@@ -190,6 +186,10 @@ div#copy {
   font-style: oblique;           /* 斜体 */
 }
 
+
+table.list {
+  margin: 0 auto;
+}
 
 
 /* 以下ハンバーガーメニュー */

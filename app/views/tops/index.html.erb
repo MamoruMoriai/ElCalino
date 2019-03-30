@@ -1,68 +1,87 @@
-<div id="menu">
-  <div id="menu_img">
-    <%= image_tag "menu.svg" %>
+  <div id="blog_position"> 
+    <h1 id="news">NEWS</h1>
+    <div id="blog">
+      <% if @blogs.present? %>
+        <table id="blogs">
+          <% @blogs.each do |blog| %>
+          <tr>
+            <td id="blog_title" width="150px"><%= link_to blog.title, blog %></td>
+            <td>\</td>
+            <td id="blog_time" width="60px"><%= blog.time %></td>
+          </tr>
+          <% end %>
+        </table>
+        <%= will_paginate @blogs %>
+      <% else %>
+        <p>blog is nothig.</p>
+      <% end %>
+    </div>
   </div>
-  <% if @categories.present? %>
-    <% @categories.each do |category| %>
-      <ul class="category_list" data-id=<%=category.id%>>
-        <li id="category_list" data-id=<%=category.id%>><%= category.name %><li>
-      </ul>
-          <% @genres.each do |genre| %>
-            <% if genre.category_id == category.id %>
-              <ul id="genre_list">
-                <div class="menu_data" data-id=<%=category.id%>>
-                <li id="genre_list"><%= genre.name %><li>
-                </div>
-              </ul>
-            <% end %>
 
-            <% if @foods.present? %>
-              <% @foods.each do |food| %>
-                <% if food.category.id == category.id && food.genre.id == genre.id %>
-                  <div class="menu_table" data-id=<%=food.category.id%>>
-                    <table class="menu_data" data-id=<%=food.category.id%>>
-                      <tr>
-                        <td width="180" class="menu_list"><%= food.name %></td>
-                        <td width="40" class="menu_list">¥<%= food.price %></td>
-                        <% if food.image? %>
-                          <td class="menu_list"><%= image_tag food.image.url %></td>
-                        <% else %>
-                          <td class="menu_list">No Image</td>
-                        <% end %>
-                      </tr>
-                    </table>
+  <div id="menu">
+    <div id="menu_img">
+      <%= image_tag "menu.svg" %>
+    </div>
+    <% if @categories.present? %>
+      <% @categories.each do |category| %>
+        <ul class="category_list" data-id=<%=category.id%>>
+          <li id="category_list" data-id=<%=category.id%>><%= category.name %><li>
+        </ul>
+            <% @genres.each do |genre| %>
+              <% if genre.category_id == category.id %>
+                <ul id="genre_list">
+                  <div class="menu_data" data-id=<%=category.id%>>
+                  <li id="genre_list"><%= genre.name %><li>
                   </div>
-                <% end %>
+                </ul>
               <% end %>
-            <% else %>
-              <p>Food menu is nothing.</p>
-            <% end %>
 
-            <% if @drinks.present? %>
-              <% @drinks.each do |drink| %>
-                <% if drink.category.id == category.id && drink.genre.id == genre.id %>
-                  <div class="menu_table" data-id=<%=drink.category.id%>>
-                    <table class="menu_data" data-id=<%=drink.category.id%>>
-                      <tr>
-                        <td width="180" class="menu_list"><%= drink.name %></td>
-                        <td width="40" class="menu_list">¥<%= drink.price %></td>
-                        <% if drink.image? %>
-                          <td class="menu_list"><%= image_tag drink.image.url %></td>
-                        <% else %>
-                          <td class="menu_list">No Image</td>
-                        <% end %>
-                      </tr>
-                    </table>
-                  </div>
+              <% if @foods.present? %>
+                <% @foods.each do |food| %>
+                  <% if food.category.id == category.id && food.genre.id == genre.id %>
+                    <div class="menu_table" data-id=<%=food.category.id%>>
+                      <table class="menu_data" data-id=<%=food.category.id%>>
+                        <tr>
+                          <td width="180" class="menu_list"><%= food.name %></td>
+                          <td width="40" class="menu_list">¥<%= food.price %></td>
+                          <% if food.image? %>
+                            <td class="menu_list"><%= image_tag food.image.url %></td>
+                          <% else %>
+                            <td class="menu_list">No Image</td>
+                          <% end %>
+                        </tr>
+                      </table>
+                    </div>
+                  <% end %>
                 <% end %>
+              <% else %>
+                <p>Food menu is nothing.</p>
               <% end %>
-            <% else %>
-              <p>Drink menu is nothing.</p>
-            <% end %>
-          </ul>
-        <% end %>
-      </ul>
+
+              <% if @drinks.present? %>
+                <% @drinks.each do |drink| %>
+                  <% if drink.category.id == category.id && drink.genre.id == genre.id %>
+                    <div class="menu_table" data-id=<%=drink.category.id%>>
+                      <table class="menu_data" data-id=<%=drink.category.id%>>
+                        <tr>
+                          <td width="180" class="menu_list"><%= drink.name %></td>
+                          <td width="40" class="menu_list">¥<%= drink.price %></td>
+                          <% if drink.image? %>
+                            <td class="menu_list"><%= image_tag drink.image.url %></td>
+                          <% else %>
+                            <td class="menu_list">No Image</td>
+                          <% end %>
+                        </tr>
+                      </table>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <p>Drink menu is nothing.</p>
+              <% end %>
+            </ul>
+          <% end %>
+        </ul>
+      <% end %>
     <% end %>
-  <% end %>
-</div>
-
+  </div>

@@ -1,20 +1,14 @@
+<h1 id="news">投稿一覧</h1>
+<h3><%= link_to "新規投稿", :new_blog %></h3>
 <div id="blog">
-
-<h1>BLOG</h1>
-
 <% if @blogs.present? %>
-<table>
-  <tr>
-    <th>タイトル</th>
-    <th>コンテンツ</th>
-    <th>配信日</th>
-  </tr>
+<table class="list">
   <% @blogs.each do |blog| %>
   <tr>
-    <td><%= link_to blog.title, blog %></td>
-    <td><%= blog.content %></td>
-    <td><%= blog.time %></td>
-    <td>
+    <td width="80px"><%= link_to blog.title, blog %></td>
+    <td width="380px"><%= blog.content %></td>
+    <td width="60px"><%= blog.time %></td>
+    <td width="100px">
       <%= link_to "編集", [:edit, blog] %> | 
       <%= link_to "削除", blog, method: :delete,
             data: { confirm: "本当に削除しますか？" } %>

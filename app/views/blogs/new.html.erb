@@ -1,12 +1,8 @@
-<div align="center">
+<h1 id="news">新規投稿</h1>
 
-<h1>投稿</h1>
-
-<p><%= link_to "TOP", :root %></p>
+<h3><%= link_to "投稿一覧", :blogs %></h3>
 
 <%= form_for @blog do |form| %>
 <%= render "form", form: form %>
 <p><%= form.submit "投稿" %></p>
 <% end %>
-
-</div>

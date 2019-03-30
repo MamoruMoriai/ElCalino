@@ -1,15 +1,15 @@
 <h1>メニュー詳細</h1>
 
-<p><%= link_to "FOODS", :foods %></p>
+<h3 id="menu"><%= link_to "FOODメニュー一覧", :foods %></h3>
 
-<table>
+<table class="list">
   <tr>
     <th>料理名</th>
     <td><%= @food.name %></td>
   </tr>
   <tr>
     <th>値段</th>
-    <td><%= @food.price %></td>
+    <td>¥<%= @food.price %></td>
   </tr>
   <% if @food.image? %>
   <tr>

@@ -3,7 +3,7 @@ class TopsController < ApplicationController
     @foods = Food.order("id")
     @drinks = Drink.order("id")
     @blogs = Blog.order("id": "DESC")
-      .paginate(page: params[:page], per_page: 15)
+      .paginate(page: params[:page], per_page: 3)
     @categories = Category.order("id")
     @genres = Genre.order("id")
   end

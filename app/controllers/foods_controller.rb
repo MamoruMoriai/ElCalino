@@ -3,6 +3,9 @@ class FoodsController < ApplicationController
 
   def index
     @foods = Food.order("id")
+    @drinks = Drink.order("id")
+    @categories = Category.order("id")
+    @genres = Genre.order("id")
   end
 
   def show
