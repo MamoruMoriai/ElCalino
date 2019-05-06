@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'css/lightbox'
  */
 
 /* css */
@@ -22,19 +23,33 @@ body {
   font-family: "Rounded Mplus 1c";  /* フォント */
 }
 
-a:link {                         /*未訪問のリンクの色*/
+a.humburger:link {                         /*未訪問のリンクの色*/
   color: #34B48B;
 }
-a:visited {                      /*訪問済みのリンクの色*/
+a.humburger:visited {                      /*訪問済みのリンクの色*/
   color: #34B48B;
 }
-a:hover {                        /*カーソルが乗っているリンクの色*/
+a.humburger:hover {                        /*カーソルが乗っているリンクの色*/
   color: #000000;
   background: #34B48B;
 }
-a:active {                       /*クリック中のリンクの色*/
+a.humburger:active {                       /*クリック中のリンクの色*/
   color: #34B48B;
 }
+a.blog_title:link {
+  color: white;
+}
+a.blog_title:visited {
+  color: white;
+}
+a.blog_title:hover {
+  color: white;
+  background: #34B48B;
+}
+a.blog_title:active {
+  color: white;
+}
+
 
 table {                   /* テーブル余白 */
   padding-bottom: 10px;
@@ -94,8 +109,8 @@ table tr td.menu_data {   /* メニューデータ */
   font-size: 16px;        /* 文字サイズ */
 }
 td.menu_list {
-  padding-left: 50px;
-  padding-right: 50px;
+  margin: 0 auto;
+  width: 200px;
 }
 div#maps_img {            /* マップイメージ */
   margin-top: 30px;       /* 上部余白 */
@@ -137,12 +152,14 @@ div#blog_position {
 }
 table#blogs {
   margin: 0 auto;
+  color: white;
 }
 div#blog {                /* ブログ背景 */
   background: linear-gradient(0.3turn,#000000 0%,#E94649 30%,#34B48B 60%,#000000 100%);                   /* 背景色 */
 }
 td#blog_title {
   font-size: 18px;
+  padding-right: 200px;
 }
 td#blog_content {
   font-size: 18px;
@@ -190,6 +207,7 @@ div#copy {
 table.list {
   margin: 0 auto;
 }
+
 
 
 /* 以下ハンバーガーメニュー */

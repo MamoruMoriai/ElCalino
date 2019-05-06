@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "tops#index"
-  resources :foods
-  resources :drinks
+  resources :foods, except: [:index]
+  resources :drinks, except: [:index]
   resources :blogs
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'

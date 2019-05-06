@@ -5,7 +5,7 @@
         <table id="blogs">
           <% @blogs.each do |blog| %>
           <tr>
-            <td id="blog_title" width="150px"><%= link_to blog.title, blog %></td>
+            <td id="blog_title" width="150px"><%= link_to blog.title, blog, class:"blog_title" %></td>
             <td>\</td>
             <td id="blog_time" width="60px"><%= blog.time %></td>
           </tr>
@@ -17,6 +17,7 @@
       <% end %>
     </div>
   </div>
+
 
   <div id="menu">
     <div id="menu_img">
@@ -42,12 +43,18 @@
                     <div class="menu_table" data-id=<%=food.category.id%>>
                       <table class="menu_data" data-id=<%=food.category.id%>>
                         <tr>
-                          <td width="180" class="menu_list"><%= food.name %></td>
-                          <td width="40" class="menu_list">¥<%= food.price %></td>
+                          <td class="menu_list"><%= food.name %></td>
+                          <td class="menu_list">¥<%= food.price %></td>
                           <% if food.image? %>
-                            <td class="menu_list"><%= image_tag food.image.url %></td>
+                            <td class="menu_list"><%= link_to image_tag(food.image.thumb.url), food.image.url, :rel => "lightbox"%></td>
                           <% else %>
                             <td class="menu_list">No Image</td>
+                          <% end %>
+                          <% if chief %>
+                            <td class="menu_list">
+                              <%= link_to "編集", [:edit, food] %> |
+                              <%= link_to "削除", food, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                            </td>
                           <% end %>
                         </tr>
                       </table>
@@ -64,12 +71,18 @@
                     <div class="menu_table" data-id=<%=drink.category.id%>>
                       <table class="menu_data" data-id=<%=drink.category.id%>>
                         <tr>
-                          <td width="180" class="menu_list"><%= drink.name %></td>
-                          <td width="40" class="menu_list">¥<%= drink.price %></td>
+                          <td class="menu_list"><%= drink.name %></td>
+                          <td class="menu_list">¥<%= drink.price %></td>
                           <% if drink.image? %>
-                            <td class="menu_list"><%= image_tag drink.image.url %></td>
+                            <td class="menu_list"><%= link_to image_tag(drink.image.thumb.url), drink.image.url, :rel => "lightbox"%></td>
                           <% else %>
                             <td class="menu_list">No Image</td>
+                          <% end %>
+                          <% if chief %>
+                            <td class="menu_list">
+                              <%= link_to "編集", [:edit, drink] %> |
+                              <%= link_to "削除", drink, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                            </td>
                           <% end %>
                         </tr>
                       </table>

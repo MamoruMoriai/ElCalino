@@ -1,4 +1,5 @@
 class DrinksController < ApplicationController
+  before_action :login_required
   def index
     @drinks = Drink.order("id")
   end

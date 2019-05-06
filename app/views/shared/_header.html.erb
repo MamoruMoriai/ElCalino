@@ -23,11 +23,11 @@
     </div>
     <nav class="hum_nav">
       <ul>
-        <li><%= link_to_unless_current "TOP", :root %></li>
-        <li><%= link_to_unless_current "MENU", "#menu_img" %></li>
-        <li><%= link_to_unless_current "ACCESS", "#maps_img" %></li>
-        <li><%= link_to_unless_current "PARKING", "#parking" %></li>
-        <li><%= link_to_unless_current "INFORMATION", "#info_img" %></li>
+        <li><%= link_to_unless_current "TOP", :root, class: "humburger" %></li>
+        <li><%= link_to_unless_current "MENU", "#menu_img", class: "humburger" %></li>
+        <li><%= link_to_unless_current "ACCESS", "#maps_img", class: "humburger" %></li>
+        <li><%= link_to_unless_current "PARKING", "#parking", class: "humburger" %></li>
+        <li><%= link_to_unless_current "INFORMATION", "#info_img", class: "humburger" %></li>
       </ul>
     </nav>
   </div>
@@ -46,10 +46,10 @@
       <ul>
         <li><%= link_to "LOGOUT", :logout, method: :delete,
                 data: { confirm: "ログアウトしますか？" } %></li>
-        <li><%= link_to_unless_current "TOP", :root %></li>
-        <li><%= link_to_unless_current "FOOD", :foods %></li>
-        <li><%= link_to_unless_current "DRINK", :drinks %></li>
-        <li><%= link_to_unless_current "BLOG", :blogs %></li>
+        <li><%= link_to_unless_current "TOP", :root, class: "humburger" %></li>
+        <li><%= link_to_unless_current "BLOG", :blogs, class: "humburger" %></li>
+        <li><%= link_to_unless_current "ADD FOOD", :new_food, class: "humburger" %></li>
+        <li><%= link_to_unless_current "ADD DRINK", :new_drink, class: "humburger" %></li>
       </ul>
     </nav>
   </div>

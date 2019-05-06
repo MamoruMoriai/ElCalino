@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  before_action :login_required
   def index
     @blogs = Blog.order("id": "DESC")
       .paginate(page: params[:page], per_page: 15)

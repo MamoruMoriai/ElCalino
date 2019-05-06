@@ -1,8 +1,5 @@
 <h1>DRINKメニューの追加</h1>
-  
-<h3 id="menu"><%= link_to "DRINKメニュー一覧", :drinks %></h3>
-
 <%= form_for @drink do |form| %>
 <%= render "form", form: form %>
-<p><%= form.submit %></p>
+<p><%= form.submit "追加" %></p>
 <% end %>
