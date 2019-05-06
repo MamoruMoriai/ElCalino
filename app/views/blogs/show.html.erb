@@ -1,6 +1,11 @@
 <h1 id="news">投稿の詳細</h1>
 
-<h3><%= link_to "投稿一覧", :blogs %></h3>
+<h3>
+  <%= link_to "TOP", :root %>
+  <% if chief %>
+    |<%= link_to "投稿一覧", :blogs %>
+  <% end %>
+</h3>
 
 <table class="blog_form">
   <tr>
