@@ -1,5 +1,5 @@
 <h1>FOODメニューの追加</h1>
-<%= form_for @food do |form| %>
+<%= form_with model: @food, method: :post, local: true do |form| %>
 <%= render "form", form: form %>
-<p><%= form.submit "追加" %></p>
+<p><%= submit_tag "追加" %></p>
 <% end %>
