@@ -38,7 +38,7 @@ class DrinksController < ApplicationController
   def destroy
     @drink = Drink.find(params[:id])
     @drink.destroy
-    redirect_to :drinks, notice: "情報を削除しました。"
+    redirect_to :root, notice: "情報を削除しました。"
   end
 
   private

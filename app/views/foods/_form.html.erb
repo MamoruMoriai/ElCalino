@@ -1,15 +1,14 @@
 <table class="list">
   <tr>
     <th><%= form.label :category_id, "カテゴリーID" %></th>
-    <td><%= form.collection_select :category_id,
-            Category.where(id: 1..7), :id, :name %>
-  </td>
+    <td>
+      <%= form.collection_select :category_id, Category.where(id: 1..7), :id, :name %>
+    </td>
   </tr>
   <tr>
     <th><%= form.label :genre_id, "ジャンルID" %></th>
     <td>
-      <%= form.collection_select :genre_id,
-          Genre.where(id: 1..6), :id, :name %>
+      <%= form.collection_select :genre_id, Genre.where(id: 1..6), :id, :name %>
     </td>
   </tr>
   <tr>

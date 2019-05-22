@@ -6,7 +6,6 @@
           <% @blogs.each do |blog| %>
           <tr>
             <td id="blog_title" width="150px"><%= link_to blog.title, blog, class:"blog_title" %></td>
-            <td>\</td>
             <td id="blog_time" width="60px"><%= blog.time %></td>
           </tr>
           <% end %>

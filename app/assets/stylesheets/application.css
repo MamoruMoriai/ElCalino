@@ -38,6 +38,7 @@ a.humburger:active {                       /*クリック中のリンクの色*/
 }
 a.blog_title:link {
   color: white;
+  text-decoration: none;
 }
 a.blog_title:visited {
   color: white;
@@ -146,6 +147,7 @@ h1#menu {
 }
 h1#news {
   color: #66EEBB;
+  display: inline-block;
 }
 div#blog_position {
   margin-top: 100px;
@@ -157,18 +159,12 @@ table#blogs {
 div#blog {                /* ブログ背景 */
   background: linear-gradient(0.3turn,#000000 0%,#E94649 30%,#34B48B 60%,#000000 100%);                   /* 背景色 */
 }
-td#blog_title {
-  font-size: 18px;
-  padding-right: 200px;
-}
-td#blog_content {
-  font-size: 18px;
-}
-td#blog_time {
-  font-size: 12px;
-}
 .blog_form {
   margin: 0 auto;
+  text-align: left;
+}
+div.blog_time {
+  display: inline-block;
 }
 
 div#header {
