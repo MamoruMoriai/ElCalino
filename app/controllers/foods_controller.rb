@@ -23,7 +23,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.save
-      redirect_to @food, notice: "追加しました。"
+      redirect_to :root, notice: "追加しました。"
     else
       render "new"
     end
@@ -42,7 +42,7 @@ class FoodsController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
-    redirect_to :root, notice: "情報を削除しました。"
+    redirect_to @food, notice: "情報を削除しました。"
   end
 
   private

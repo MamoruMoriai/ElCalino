@@ -1,5 +1,5 @@
 <h1>DRINKメニュー情報の編集</h1>
-<%= form_for model: @drink, method: :post, local: true do |form| %>
+<%= form_for model: @drink, method: :patch, local: true do |form| %>
 <%= render "form", form: form %>
 <p><%= submit_tag "更新" %></p>
 <% end %>

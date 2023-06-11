@@ -19,7 +19,7 @@ class DrinksController < ApplicationController
   def create
     @drink = Drink.new(drink_params)
     if @drink.save
-      redirect_to @drink, notice: "追加しました。"
+      redirect_to :root, notice: "追加しました。"
     else
       render "new"
     end
@@ -29,7 +29,7 @@ class DrinksController < ApplicationController
     @drink = Drink.find(params[:id])
     @drink.assign_attributes(drink_params)
     if @drink.save
-      redirect_to @drink, notice: "情報を更新しました。"
+      redirect_to :root, notice: "情報を更新しました。"
     else
       render "edit"
     end
